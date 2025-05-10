@@ -1,21 +1,22 @@
-import React from 'react'
+import React from 'react';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 function Layout({ children }) {
-    return (
-        <>
-            <div className='min-h-screen bg-red-100 flex flex-col'>
-                <div className='w-full h-[100px] bg-orange-300 p-10 '>
-                    <h1>Header</h1>
-                </div>
-                <main className='p-10'>
-                    {children}
-                </main>
-                <div className='w-full h-[100px] bg-green-300 bottom-0 absolute p-10'>
-                    <h1>Footer</h1>
-                </div>
-            </div>
-        </>
-    )
+  return (
+    <div className="flex flex-col min-h-screen">
+      <header className="fixed top-0 w-full bg-orange-300 z-50 py-6 px-10">
+        <Header />
+      </header>
+
+      <main className="flex-1 py-[120px] bg-red-100 px-10">
+        {children}
+      </main>
+      <footer className="w-full  bg-green-300 py-3 px-10">
+        <Footer />
+      </footer>
+    </div>
+  );
 }
 
 export default Layout;
